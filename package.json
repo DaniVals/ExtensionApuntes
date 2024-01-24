@@ -21,7 +21,7 @@
       }
     }],
     "grammars": [{
-      "language": "Apunte",
+      "language": "apuntes",
       "scopeName": "source.apuntes",
       "path": "./syntaxes/apuntes.tmLanguage.json"
     }]
