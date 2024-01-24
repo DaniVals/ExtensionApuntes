@@ -1,0 +1,29 @@
+{
+  "name": "apuntes",
+  "displayName": "apuntes",
+  "description": "una extension para poder poner colores a diferentes filas de un txt",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "apuntes",
+      "aliases": ["apuntes", "apuntes"],
+      "extensions": [".apuntes",".apunte",".pnt"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "dark": "./resources/lightIcon.png",
+        "light": "./resources/darkIcon.png"
+      }
+    }],
+    "grammars": [{
+      "language": "Apunte",
+      "scopeName": "source.apuntes",
+      "path": "./syntaxes/apuntes.tmLanguage.json"
+    }]
+  }
+}

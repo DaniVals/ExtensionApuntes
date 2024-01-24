@@ -1,0 +1,99 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "apuntes",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name":"comment",
+				"begin": "\\((?![ \t])",
+				"end": "[\\)\n]"
+			},
+			{
+				"name": "tag.square-brackets",
+				"begin": "\\[",
+				"end": "\\]",
+				"beginCaptures": {
+				  "0": { "name": "punctuation.definition.tag.begin" }
+				},
+				"endCaptures": {
+				  "0": { "name": "punctuation.definition.tag.end" }
+				},
+				"patterns": [
+				  {
+					"name": "content.between-brackets",
+					"match": "([^\\[\\]]+)",
+					"captures": {
+					  "1": { "name": "strong" }
+					}
+				  }
+				]
+			}]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric",
+				"begin": "^[ \t]*[0-9]",
+				"end": "[\n]"
+			}]
+		},
+		"strings": {
+			"patterns": [{
+				"name": "string",
+				"begin": "^-+",
+				"end": "[\n]"
+			}]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable",
+				"begin": "\\b[A-Z][.]",
+				"end": "\\b"
+			}]
+		},
+		"functions": {
+			"patterns": [{
+				"name": "support.function",
+				"begin": "\\b[A-Z][A-Za-z0-9]+",
+				"end": "\\b"
+			}]
+		},
+		"types": {
+			"patterns": [{
+				"name": "entity.name.type",
+				"begin": "\\{",
+				"end": "\\}"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control",
+				"begin": "^[ \t]*=+",
+				"end": "\n"
+			}]
+		}
+	},
+	"scopeName": "source.apuntes"
+}
