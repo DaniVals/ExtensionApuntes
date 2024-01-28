@@ -1,13 +1,24 @@
 {
   "name": "apuntes",
   "displayName": "apuntes",
-  "description": "una extension para poder poner colores a diferentes filas de un txt",
-  "version": "1.0.0",
+  "description": "Una extension para poder poner colores a diferentes filas de un txt",
+  "author": {
+    "name": "DanielValsSimon.apuntes",
+    "url": "https://github.com/DaniVals",
+    "email": "daniel.vals.simon@gmail.com"
+  },
+  "publisher": "DanielValsSimon",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.85.0"
   },
+  "repository": {"url": "https://github.com/DaniVals/ExtensionApuntes"},
+  "main": "./scripts/start.js",
   "categories": [
-    "Programming Languages"
+    "Notebooks",
+    "Visualization",
+    "Programming Languages",
+    "Education"
   ],
   "contributes": {
     "languages": [{
@@ -24,6 +35,62 @@
       "language": "apuntes",
       "scopeName": "source.apuntes",
       "path": "./syntaxes/apuntes.tmLanguage.json"
-    }]
+    }],
+    "commands": [
+      {
+        "command": "apuntes.applySettings",
+        "title": "Apuntes refresh settings"
+      }
+    ],
+    "configuration": {
+      "title": "Apuntes",
+      "properties": {
+        "apuntes.guia.Tokens":{
+          "type":"null",
+          "order": 0,
+          "markdownDescription": "La categoria 'tokenUsed' se usa para referenciar el [token en TextMate de tu tema](https://code.visualstudio.com/docs/getstarted/themes#_editor-syntax-highlighting) que se use para ese color. Si quiere desactivar ese color puede dejar esa opcion en blanco, recuerde usar el comandp 'Apuntes refresh settings' despues de cambiar algo."
+        },
+        "apuntes.guide.Tokens":{
+          "type":"null",
+          "order": 1,
+          "markdownDescription": "The 'tokenUsed' category is used to reference the [TextMate token of your theme](https://code.visualstudio.com/docs/getstarted/themes#_editor-syntax-highlighting) used for that color. If you want to deactivate it, you can leave it empty, remember to run the command 'Apuntes refresh settings' after changing it."
+        },
+        "apuntes.tokenUsed.grey":{
+          "description": "entre parentesis",
+          "type":"string",
+          "default":"comment"
+        },
+        "apuntes.tokenUsed.red":{
+          "description": "enunciados numericos",
+          "type":"string",
+          "default":"constant.numeric"
+        },
+        "apuntes.tokenUsed.orange":{
+          "description": "saltos de pagina",
+          "type":"string",
+          "default":"string"
+        },
+        "apuntes.tokenUsed.yellow":{
+          "description": "Mayusculas",
+          "type":"string",
+          "default":"support.function"
+        },
+        "apuntes.tokenUsed.green":{
+          "description": "entre llaves",
+          "type":"string",
+          "default":"entity.name.type"
+        },
+        "apuntes.tokenUsed.blue":{
+          "description": "Siglas",
+          "type":"string",
+          "default":"variable"
+        },
+        "apuntes.tokenUsed.purple":{
+          "description": "sub enunciados",
+          "type":"string",
+          "default":"keyword.control"
+        }
+      }
+    }
   }
 }

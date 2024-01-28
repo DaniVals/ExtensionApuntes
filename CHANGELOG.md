@@ -1,10 +1,12 @@
 # Change Log
 ## v1.0.0
-(ordenados segun el orden de prioridad y como estan escritos en el codigo)
-
 token "comment" "\\((?![ \t])" - "[\\)\n]"
-
-(esta cosa para que los corchetes se pongan en gris y el contenido en negrita)
+token "constant.numeric" from "^[ \t]*[0-9]" to "[\n]""
+token "string" from "^-+" to [\n]
+token "variable" from "\\b[A-Z][.]" to "\\b"
+token "support.function" from "\\b[A-Z][A-Za-z0-9]+" to "\\b"
+token "entity.name.type" from "\\{" to "\\}"
+token "keyword.control" from "^[ \t]*=+" to "\n"
 ```json
 "name": "tag.square-brackets",
 "begin": "\\[",
@@ -25,9 +27,6 @@ token "comment" "\\((?![ \t])" - "[\\)\n]"
   }
 ]
 ```
-token "constant.numeric" from "^[ \t]*[0-9]" to "[\n]""
-token "string" from "^-+" to [\n]
-token "variable" from "\\b[A-Z][.]" to "\\b"
-token "support.function" from "\\b[A-Z][A-Za-z0-9]+" to "\\b"
-token "entity.name.type" from "\\{" to "\\}"
-token "keyword.control" from "^[ \t]*=+" to "\n"
+## v1.1.0
+added settings for every color
+added a command that  updates the tmLanguage file with the settings
