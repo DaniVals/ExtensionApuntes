@@ -55,18 +55,18 @@ function applySettings(){
                     },
                     tokenUsedRed !== "" && {
                         "name": tokenUsedRed,
-                        "begin": "^[ \t]*[0-9]",
+                        "begin": "^[ \t]*[0-9].",
                         "end": "[\n]"
                     },
                     tokenUsedOrange !== "" && {
                         "name": tokenUsedOrange,
                         "begin": "^-+",
-                        "end": "[\n]"
+                        "end": "[\n-+]"
                     },
                     tokenUsedYellow !== "" && {
-                    "name": tokenUsedYellow,
-                      "begin": "\\b[A-Z][A-Za-z0-9]+",
-                      "end": "\\b"
+                        "name": tokenUsedYellow,
+                        "begin": "\\b[A-ZÑ][ÑA-Zña-z0-9]+",
+                        "end": "\\b"
                     },
                     tokenUsedGreen !== "" && {
                         "name": tokenUsedGreen,
@@ -75,8 +75,8 @@ function applySettings(){
                     },
                     tokenUsedBlue !== "" && {
                         "name": tokenUsedBlue,
-                        "begin": "\\b[A-Z][.]",
-                        "end": "\\b"
+                        "begin": "\\b[A-ZÑ][.]",
+                        "end": "[\\b\n]"
                     },
                     tokenUsedPurple !== "" && {
                         "name": tokenUsedPurple,

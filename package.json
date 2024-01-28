@@ -1,14 +1,21 @@
 {
   "name": "apuntes",
-  "displayName": "apuntes",
-  "description": "Una extension para poder poner colores a diferentes filas de un txt",
+  "displayName": "Notes / Apuntes",
+  "description": "A file extension to add colors to your txts / Una extension de archivo para usar colores en tus txts",
   "author": {
     "name": "DanielValsSimon.apuntes",
     "url": "https://github.com/DaniVals",
     "email": "daniel.vals.simon@gmail.com"
   },
   "publisher": "DanielValsSimon",
-  "version": "1.1.0",
+  "icon": "./resources/lightIcon.png",
+  "keywords": 
+  [
+    "apunte","apuntes", "colores"
+    ,"note","notes","colors"
+    ,"txt"
+  ],
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -23,8 +30,8 @@
   "contributes": {
     "languages": [{
       "id": "apuntes",
-      "aliases": ["apuntes", "apuntes"],
-      "extensions": [".apuntes",".apunte",".pnt"],
+      "aliases": ["apuntes", "notes"],
+      "extensions": [".apuntes",".apunte",".pnt", ".notes",".note", ".nts"],
       "configuration": "./language-configuration.json",
       "icon": {
         "dark": "./resources/lightIcon.png",
@@ -56,17 +63,17 @@
           "markdownDescription": "The 'tokenUsed' category is used to reference the [TextMate token of your theme](https://code.visualstudio.com/docs/getstarted/themes#_editor-syntax-highlighting) used for that color. If you want to deactivate it, you can leave it empty, remember to run the command 'Apuntes refresh settings' after changing it."
         },
         "apuntes.tokenUsed.grey":{
-          "description": "entre parentesis",
+          "description": "Entre parentesis",
           "type":"string",
           "default":"comment"
         },
         "apuntes.tokenUsed.red":{
-          "description": "enunciados numericos",
+          "description": "Enunciados numericos",
           "type":"string",
           "default":"constant.numeric"
         },
         "apuntes.tokenUsed.orange":{
-          "description": "saltos de pagina",
+          "description": "Saltos de pagina",
           "type":"string",
           "default":"string"
         },
@@ -76,7 +83,7 @@
           "default":"support.function"
         },
         "apuntes.tokenUsed.green":{
-          "description": "entre llaves",
+          "description": "Entre llaves",
           "type":"string",
           "default":"entity.name.type"
         },
@@ -86,7 +93,7 @@
           "default":"variable"
         },
         "apuntes.tokenUsed.purple":{
-          "description": "sub enunciados",
+          "description": "Sub enunciados",
           "type":"string",
           "default":"keyword.control"
         }

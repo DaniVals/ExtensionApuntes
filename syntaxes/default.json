@@ -36,17 +36,17 @@
     },
     {
       "name": "constant.numeric",
-      "begin": "^[ \t]*[0-9]",
+      "begin": "^[ \t]*[0-9].",
       "end": "[\n]"
     },
     {
       "name": "string",
       "begin": "^-+",
-      "end": "[\n]"
+      "end": "[\n-+]"
     },
     {
       "name": "support.function",
-      "begin": "\\b[A-Z][A-Za-z0-9]+",
+      "begin": "\\b[A-ZÑ][ÑA-Zña-z0-9]+",
       "end": "\\b"
     },
     {
@@ -56,8 +56,8 @@
     },
     {
       "name": "variable",
-      "begin": "\\b[A-Z][.]",
-      "end": "\\b"
+      "begin": "\\b[A-ZÑ][.]",
+      "end": "[\\b\n]"
     },
     {
       "name": "keyword.control",
