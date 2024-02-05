@@ -3,11 +3,63 @@ const fs = require('fs');
 const path = require('path');
 
 function activate(context) {
-    //mostrar que se ha cargado
+
+    //revisar si se acaba de istalar o se ha actualizado
+    const extensionVersion = context.globalState.get('extensionVersion');
+    const currentVersion = vscode.extensions.getExtension('DanielValsSimon.apuntes').packageJSON.version;
+    if (!extensionVersion || extensionVersion !== currentVersion) {
+        addSettings();
+        context.globalState.update('extensionVersion', currentVersion);
+    }
+    
+    //comando para reescribir apuntes.tmLanguage.json
     vscode.commands.registerCommand('apuntes.applySettings', () => {
         applySettings();
     });
 }
+function addSettings(){
+    vscode.window.showInformationMessage('The extension "apuntes" has been updated')
+    /*
+        const configuration = vscode.workspace.getConfiguration();
+
+        // Define the scope and color values
+        const scope = "ssssss";
+        const color = "#FF0000";
+
+        // Get the existing value of editor.tokenColorCustomizations.textMateRules
+        let existingRules = configuration.get('editor.tokenColorCustomizations.textMateRules', []);
+
+        // Check if the specified scope is already present
+        const existingRuleIndex = existingRules.findIndex(rule => rule.scope === scope);
+
+        if (existingRuleIndex !== -1) {
+            // If the scope is already present, update its color
+            existingRules[existingRuleIndex].settings.foreground = color;
+
+            // Update the user's settings with the modified rule
+            configuration.update('editor.tokenColorCustomizations.textMateRules', existingRules, vscode.ConfigurationTarget.Global);
+
+            vscode.window.showInformationMessage(`Updated color for scope '${scope}'.`);
+        } else {
+            // If the scope is not present, add a new rule with the scope and color
+            existingRules.push({
+                "scope": scope,
+                "settings": {
+                    "foreground": color
+                }
+            });
+
+            // Update the user's settings with the new rule
+            configuration.update('editor.tokenColorCustomizations.textMateRules', existingRules, vscode.ConfigurationTarget.Global);
+
+            vscode.window.showInformationMessage(`Added color for scope '${scope}'.`);
+        }
+    });
+
+    context.subscriptions.push(disposable);
+    */
+}
+
 function applySettings(){
     
     vscode.window.showInformationMessage('Aplicando cambios');
@@ -21,6 +73,7 @@ function applySettings(){
     const tokenUsedGreen = apuntesConfig.get('tokenUsed.green', 'entity.name.type');
     const tokenUsedBlue = apuntesConfig.get('tokenUsed.blue', 'variable');
     const tokenUsedPurple = apuntesConfig.get('tokenUsed.purple', 'keyword.control');
+    //apuntesConfig.update('tokenUsed.purple','prueba',true)
 
     const configRaw = {
         "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
@@ -55,23 +108,22 @@ function applySettings(){
                     },
                     tokenUsedRed !== "" && {
                         "name": tokenUsedRed,
-                        "begin": "^[ \t]*[0-9].",
+                        "begin": "^[ \t]*[0-9]+.[^0-9]",
                         "end": "[\n]"
                     },
                     tokenUsedOrange !== "" && {
                         "name": tokenUsedOrange,
-                        "begin": "^-+",
-                        "end": "[\n-+]"
+                        "begin": "\\{",
+                        "end": "\\}"
                     },
                     tokenUsedYellow !== "" && {
                         "name": tokenUsedYellow,
-                        "begin": "\\b[A-ZÑ][ÑA-Zña-z0-9]+",
-                        "end": "\\b"
+                        "begin": "^[ \t]*[0-9]+.[0-9]+\\b",
+                        "end": "[\n]"
                     },
                     tokenUsedGreen !== "" && {
                         "name": tokenUsedGreen,
-                        "begin": "\\{",
-                        "end": "\\}"
+                        "match": "^[ \t]*[-><]"
                     },
                     tokenUsedBlue !== "" && {
                         "name": tokenUsedBlue,
@@ -81,7 +133,7 @@ function applySettings(){
                     tokenUsedPurple !== "" && {
                         "name": tokenUsedPurple,
                         "begin": "^[ \t]*=+",
-                        "end": "\n"
+                        "end": "[=+\\n]"
                     }
               ].filter(Boolean)
     };

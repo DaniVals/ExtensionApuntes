@@ -36,23 +36,22 @@
     },
     {
       "name": "constant.numeric",
-      "begin": "^[ \t]*[0-9].",
+      "begin": "^[ \t]*[0-9]+.[^0-9]",
       "end": "[\n]"
     },
     {
       "name": "string",
-      "begin": "^-+",
-      "end": "[\n]"
+      "begin": "\\{",
+      "end": "\\}"
     },
     {
       "name": "support.function",
-      "begin": "\\b[A-ZÑ][ÑA-Zña-z0-9]+",
-      "end": "\\b"
+      "begin": "^[ \t]*[0-9]+.[0-9]+\\b",
+      "end": "[\n]"
     },
     {
       "name": "entity.name.type",
-      "begin": "\\{",
-      "end": "\\}"
+      "match": "^[ \t]*[-><]"
     },
     {
       "name": "variable",
@@ -62,7 +61,7 @@
     {
       "name": "keyword.control",
       "begin": "^[ \t]*=+",
-      "end": "\n"
+      "end": "[=+\\n]"
     }
   ]
 }

@@ -1,60 +1,62 @@
-# [ESP](#apuntes) [ENG](#notes)
+# [ESP](#apuntes-extensión) [ENG](#notes-extension)
 
 # Notes extension
-A file extension (.notes / .note / .nts) that uses your theme colors to assign them into certain patters.
+A file extension (.notes / .note / .nts) that uses your theme colors to assign them into certain patterns.
 
 ## Use colors
-If the line starts with a number followed by a point it gets red.
 
-If the line starts with '=' it gets purple.
+Use the color red for statements, writing a number and a point: 1. Statement
 
-If the line starts with '-' it gets orange, setting a line break.
+Use the color yellow for sub-statements, adding more numbers to the case before: 1.3 Sub-statements
 
-The words that start with capital letters gets yellow.
+Use the color purple for paragraphs, writing them between '=': == paragraphs ==
 
-The acronyms gets blue.
+Use the color green for lists, writing characters like: - < >
 
-The parentheses gets grey to make clarifications.
+Use the color blue to sort lists, writing a letter and a point: A. primera opción
+
+Use the color orange to group calculations, writing them between braces: {calculations}
+
+Between parentheses gets grey to write clarifications.
 
 Between brackets gets bold and the brackets get transparent.
 
-Between braces gets green to group calculations.
-
 ## Change the token of each case
-To change the configuration of the extension, you will need to quote the [TextMate token of your theme](https://code.visualstudio.com/docs/getstarted/themes#_editor-syntax-highlighting) used for that color. If you want to deactivate it, you'll have to leave that setting empty, remember to run the command 'Apuntes refresh settings' after changing it.
+To change the configuration of the extension, you will need to quote the [TextMate token of your theme](https://code.visualstudio.com/docs/getstarted/themes#_editor-syntax-highlighting) used for that color. If you want to deactivate it, you'll have to leave that setting empty. Remember to run the command 'Apuntes refresh settings' after changing it.
 
 ## Patch notes
 ### 1.0.0
 Initial release.
 
 ### 1.1.0
-Settings for every color used through the TextMate tokes of the users theme.
+Settings for every color used through the TextMate tokens of the user's theme.
 
 ### 1.2.0
-Fixed some bugs, like the acronyms leaking through linebreaks or the letter Ñ not being detected.
-Improved the extension to hold more languages (espanish and english for now)
+Fixed some bugs, like the acronyms leaking through linebreaks or the letter 'Ñ' not being detected.
+Improved the extension to support more languages (Spanish and English for now).
+
+### 1.3.0
+Some pattern colors have been fixed, and others have been reworked.
 
 # Apuntes extensión
 Una extensión de archivo (.apuntes / .apunte / .pnt) que usa los colores de tu tema para asignar colores a ciertos patrones.
 
 ## Usa colores
-Si la línea empieza por un número seguido de un punto se pone rojo.
+Usa el color rojo para enunciados, colocando un número y un punto: 1. Enunciado
 
-Si la línea empieza por '=' se pondrá morado.
+Usa el color amarillo para subenunciados, añadiendo más números al caso anterior: 1.3 Subenunciado
 
-Si la línea empieza por '-' se pondrá naranja marcando salto de línea.
+Usa el color morado para apartados, encapsulándolos entre '=': == apartado ==
 
+Usa el color verde para listas desordenadas, colocando caracteres como: - < >
 
-Las palabras que empiecen por mayúsculas se pondrán amarillo.
+Usa el color azul para listas ordenadas, colocando una letra y un punto: A. primera opción
 
-Las siglas se pondrán azul.
+Usa el color naranja para agrupar cálculos, colocando estos entre llaves: {cálculos}
 
-Entre paréntesis se pone en transparente para hacer aclaraciones.
+Entre paréntesis se pone en transparente para poder hacer aclaraciones.
 
 Entre corchetes se pone en negrita y se transparentan los corchetes.
-
-Entre llaves se pone verde para agrupar cálculos.
-
 
 ## Cambiar tokens asignados a cada caso
 Para cambiar la configuración de la extensión, necesitará citar el [token en TextMate de tu tema](https://code.visualstudio.com/docs/getstarted/themes#_editor-syntax-highlighting) que quiere que se use para ese color. Si quiere desactivar ese color puede dejar esa opción en blanco, recuerde usar el comando 'Apuntes refresh settings' después de cambiar algo.
@@ -67,5 +69,8 @@ Salida inicial.
 Configuraciones para cada color usado a través de las tokens de TextMate del tema del usuario.
 
 ### 1.2.0
-Solucionado algunos bugs, como las iniciales aplicándose en diferentes líneas o las Ñ no detectándose como letras (mas detalles en el changelog).
-Mejorado la extensión para agrupar varios idiomas (por ahora solo hay inglés y español).
+Solucionados algunos bugs, como las iniciales aplicándose en diferentes líneas o las 'Ñ' no detectándose como letras (más detalles en el changelog).
+Mejorada la extensión para admitir más idiomas (por ahora solo hay inglés y español).
+
+### 1.3.0
+Se han arreglado algunos patrones de color y otros se han hecho desde cero.

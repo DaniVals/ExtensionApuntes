@@ -41,10 +41,43 @@ fixed bug where the color blue was added through linesteps
 numbers now need to be followed by a point to be classified as an statement
 added the leter ñ where all the leters where used
 
-token "comment" "\\((?![ \t])" - "[\\)\n]"
-token "constant.numeric" from "^[ \t]*[0-9]." to "[\n]""
-token "string" from "^-+" to [\n]
-token "support.function" from "\\b[A-ZÑ][A-ZÑa-zñ0-9]+" to "\\b"
-token "entity.name.type" from "\\{" to "\\}"
-token "variable" from "\\b[A-ZÑ][.]" to "\\b"
-token "keyword.control" from "^[ \t]*=+" to "\n"
+token "comment" 
+	from "\\((?![ \t])" 
+	to "[\\)\n]"
+token "constant.numeric" 
+	from "^[ \t]*[0-9]." 
+	to "[\n]""
+token "string" 
+	from "^-+" 
+	to "[\n]"
+token "support.function" 
+	from "\\b[A-ZÑ][A-ZÑa-zñ0-9]+" 
+	to "\\b"
+token "entity.name.type" 
+	from "\\{" 
+	to "\\}"
+token "variable" 
+	from "\\b[A-ZÑ][.]" 
+	to "\\b"
+token "keyword.control" 
+	from "^[ \t]*=+" 
+	to "\n"
+
+## v1.3.0
+
+token "constant.numeric" is now 
+      from "^[ \t]*[0-9]+.[^0-9]",
+      to "[\n]"
+token "string" is now
+      from "\\{",
+      to "\\}"
+token "support.function" is now
+      from "^[ \t]*[0-9]+.[0-9]+\\b",
+      to "[\n]"
+token "entity.name.type" is now 
+	match "^[ \t]*[-><]"
+token "keyword.control" is now
+      from "^[ \t]*=+",
+      to "[=+\\n]"
+
+added update detector for autoupdating and probably for future updates

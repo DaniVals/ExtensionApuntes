@@ -15,7 +15,7 @@
     ,"note","notes","colors"
     ,"txt"
   ],
-  "version": "1.2.0",
+  "version": "1.3.0",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -63,17 +63,17 @@
           "markdownDescription": "The 'tokenUsed' category is used to reference the [TextMate token of your theme](https://code.visualstudio.com/docs/getstarted/themes#_editor-syntax-highlighting) used for that color. If you want to deactivate it, you can leave it empty, remember to run the command 'Apuntes refresh settings' after changing it."
         },
         "apuntes.tokenUsed.grey":{
-          "description": "Entre parentesis",
+          "description": "(Grey color)",
           "type":"string",
           "default":"comment"
         },
         "apuntes.tokenUsed.red":{
-          "description": "Enunciados numericos",
+          "description": "1. Red color",
           "type":"string",
           "default":"constant.numeric"
         },
         "apuntes.tokenUsed.orange":{
-          "description": "Saltos de pagina",
+          "description": "{Orange color}",
           "type":"string",
           "default":"string"
         },
@@ -83,17 +83,17 @@
           "default":"support.function"
         },
         "apuntes.tokenUsed.green":{
-          "description": "Entre llaves",
+          "description": "Green char list {-><}",
           "type":"string",
           "default":"entity.name.type"
         },
         "apuntes.tokenUsed.blue":{
-          "description": "Siglas",
+          "description": "A. Blue color",
           "type":"string",
           "default":"variable"
         },
         "apuntes.tokenUsed.purple":{
-          "description": "Sub enunciados",
+          "description": "== Purple color ==",
           "type":"string",
           "default":"keyword.control"
         }
